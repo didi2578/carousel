@@ -15,7 +15,9 @@ const SliderContent = ({ SliderInfo, activeIndex, transitionIndex }) => {
           <div className="infoBox">
             <h2>{slide.title}</h2>
             <h3>{slide.span}</h3>
-            <a href="/">바로가기</a>
+            <a href="/">
+              바로가기 <i class="fas fa-chevron-right"></i>
+            </a>
           </div>
         </div>
       ))}

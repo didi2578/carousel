@@ -20,7 +20,10 @@ const GnbAside = () => {
               <Badge />
             </button>
           </li>
-          <li>
+          <li className="menuDot">
+            <i class="fas fa-ellipsis-h"></i>
+          </li>
+          <li className="pc-only">
             <button>
               <img
                 src="https://lh3.googleusercontent.com/a-/AOh14GhfMaa41zXHT7TMpLev--nypLHFKLLu6UT0YOsx=s96-c"
@@ -29,7 +32,7 @@ const GnbAside = () => {
               <Badge />
             </button>
           </li>
-          <li>
+          <li className="pc-only">
             <a href="/">기업 서비스</a>
           </li>
         </ul>
@@ -46,6 +49,9 @@ const AsideBar = styled.aside`
     align-items: center;
     .iconButton {
       margin-right: 10px;
+    }
+    .menuDot {
+      margin-left: 7px;
     }
     li {
       a {
@@ -72,8 +78,7 @@ const AsideBar = styled.aside`
         }
       }
     }
-    .border {
-    }
+
     button {
       position: relative;
       height: 32px;
@@ -87,6 +92,22 @@ const AsideBar = styled.aside`
         background-size: cover;
         background-repeat: no-repeat;
       }
+    }
+  }
+
+  @media ${(props) => props.theme.desktop} {
+    .menuDot {
+      display: none !important;
+      margin-left: 3px !important;
+    }
+  }
+
+  @media ${(props) => props.theme.lgOnly} {
+    .pc-only {
+      display: none !important;
+    }
+    .iconButton {
+      margin-right: 0 !important;
     }
   }
 `

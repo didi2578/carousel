@@ -43,4 +43,16 @@ const LeftBar = styled.div`
       transform: scale(0.8);
     }
   }
+  @media ${(props) => props.theme.tablet} {
+    width: 100% !important;
+    justify-content: flex-start;
+    height: 60px;
+    padding-left: 5px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    width: 100% !important;
+    justify-content: flex-start;
+    height: 60px;
+    padding-left: 5px;
+  }
 `

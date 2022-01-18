@@ -19,10 +19,16 @@ const Gnb = () => {
 export default Gnb
 
 const GnbNav = styled.nav`
-  height: 50px;
   max-width: 1060px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  @media ${(props) => props.theme.tablet} {
+    padding: 0 30px 15px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    padding: 0 15px 10px;
+  }
 `
