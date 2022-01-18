@@ -1,7 +1,7 @@
 import React from 'react'
-import SerchButton from '../icon/SearchButton'
-import Bell from '../icon/Bell'
-import Badge from '../icon/Badge'
+import SerchButton from '../common/icon/SearchButton'
+import Bell from '../common/icon/Bell'
+import Badge from '../common/icon/Badge'
 import styled from 'styled-components'
 
 const GnbAside = () => {

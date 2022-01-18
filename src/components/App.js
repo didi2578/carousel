@@ -1,6 +1,6 @@
 import React from 'react'
-import Gnb from 'components/common/Gnb'
-import Banner from './Banner'
+import Gnb from 'components/Gnb'
+import Banner from './banner'
 import GlobalStyles from 'styles/GlobalStyles'
 
 function App() {

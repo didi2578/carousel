@@ -10,7 +10,7 @@ const GnbLeft = () => {
           alt="hamberger menu"
         />
       </button>
-      <h1 class="logo">
+      <h1 className="logo">
         <img
           src="https://s3.ap-northeast-2.amazonaws.com/static.wanted.co.kr/images/logo_wanted_black.png"
           alt="main logo"
