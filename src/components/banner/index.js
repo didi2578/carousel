@@ -11,8 +11,8 @@ const Banner = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex(activeIndex === -len ? -1 : activeIndex - 1)
       setTransitionIndex(activeIndex === -len ? 0 : 0.5)
+      setActiveIndex(activeIndex === -len ? -1 : activeIndex - 1)
     }, 5000)
     return () => clearInterval(interval)
   }, [activeIndex])
