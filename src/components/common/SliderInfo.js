@@ -1,4 +1,4 @@
-export default [
+const SliderInfo = [
   {
     title: 'UX 디자이너의 커리어 설계',
     span: '브랜드 가치를 더하는 디자인',
@@ -50,3 +50,4 @@ export default [
     urls: 'https://static.wanted.co.kr/images/banners/1490/0b775035.jpg',
   },
 ]
+export default SliderInfo
