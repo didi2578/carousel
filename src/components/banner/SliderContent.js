@@ -1,16 +1,20 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 const SliderContent = ({ SliderInfo, activeIndex, transitionIndex }) => {
-  console.log(' 되는겨?', transitionIndex)
+  console.log(activeIndex)
+
   return (
     <ImgSlider
       style={{
-        transform: `translateX(${activeIndex}px)`,
+        transform: `translateX(calc(${activeIndex} * 60%) )`,
         transition: `${transitionIndex}s all ease-in-out`,
       }}
     >
       {SliderInfo.map((slide, index) => (
-        <div key={index} className="slides">
+        <div
+          key={index}
+          className={-index === activeIndex ? 'slides active' : 'slides'}
+        >
           <img className="slide-image" src={slide.urls} alt={slide.title} />
           <div className="infoBox">
             <h2>{slide.title}</h2>
@@ -33,18 +37,26 @@ const ImgSlider = styled.section`
   display: flex;
   justify-content: flex-start;
   flex-wrap: nowrap;
-  margin-left: 22%;
+  margin-left: 20%;
 
   .slides {
     height: 100%;
-    width: 55%;
+    width: 60%;
     flex: 1 0 auto;
     position: relative;
-    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    filter: brightness(50%);
+    transition: 0.5s all ease-in-out;
+    &.active {
+      filter: brightness(100%);
+    }
   }
   .slide-image {
     height: 100%;
-    object-fit: cover;
+    width: calc(100% - 20px);
+    margin: 0 10px;
+    border-radius: 4px;
   }
   .infoBox {
     position: absolute;
@@ -76,6 +88,24 @@ const ImgSlider = styled.section`
       color: #36f;
       padding: 20px;
       display: block;
+    }
+  }
+
+  @media ${(props) => props.theme.mintablet} {
+    .slides {
+      filter: brightness(100%);
+    }
+    .infoBox {
+      width: 100% !important;
+      position: initial !important;
+      text-align: center !important;
+      h3 {
+        height: 20px !important;
+      }
+      a {
+        border-top: none;
+        padding: 15px 0 0 0 !important;
+      }
     }
   }
 `

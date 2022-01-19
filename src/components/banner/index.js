@@ -4,21 +4,20 @@ import SliderInfo from '../common/SliderInfo'
 import styled from 'styled-components'
 
 const len = SliderInfo.length - 2
-const imgSize = 1080
 
 const Banner = () => {
-  const [activeIndex, setActiveIndex] = useState(-imgSize)
+  const [activeIndex, setActiveIndex] = useState(-1)
   const [transitionIndex, setTransitionIndex] = useState(0.5)
 
   const prevSlide = () => {
-    activeIndex === -imgSize
-      ? setActiveIndex(-imgSize * len) || setTransitionIndex(0)
-      : setActiveIndex(activeIndex + imgSize) || setTransitionIndex(0.5)
+    activeIndex === -1
+      ? setActiveIndex(-len) || setTransitionIndex(0)
+      : setActiveIndex(activeIndex + 1) || setTransitionIndex(0.5)
   }
   const nextSlide = () => {
-    activeIndex === -imgSize * len
-      ? setActiveIndex(-imgSize) || setTransitionIndex(0)
-      : setActiveIndex(activeIndex - imgSize) || setTransitionIndex(0.5)
+    activeIndex === -len
+      ? setActiveIndex(-1) || setTransitionIndex(0)
+      : setActiveIndex(activeIndex - 1) || setTransitionIndex(0.5)
   }
 
   return (
@@ -28,10 +27,10 @@ const Banner = () => {
         activeIndex={activeIndex}
         transitionIndex={transitionIndex}
       />
-      <button onClick={prevSlide} className="prev">
+      <button onClick={prevSlide} className="btn prev">
         <i class="fas fa-chevron-left"></i>
       </button>
-      <button onClick={nextSlide} className="next">
+      <button onClick={nextSlide} className="btn next">
         <i class="fas fa-chevron-right"></i>
       </button>
     </SliderContainer>
@@ -61,9 +60,14 @@ const SliderContainer = styled.div`
     cursor: pointer;
   }
   .prev {
-    left: 19%;
+    left: 17%;
   }
   .next {
-    right: 19%;
+    right: 17%;
+  }
+  @media ${(props) => props.theme.lgOnly} {
+    .btn {
+      display: none !important;
+    }
   }
 `

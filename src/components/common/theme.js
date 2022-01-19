@@ -6,5 +6,6 @@ const theme = {
   lgHidden: ` (min-width: 992px)`,
   smOnly: ` (min-width: 768px)`,
   smHidden: `(max-width: 767px)`,
+  mintablet: `(max-width:991px)`,
 }
 export default theme
