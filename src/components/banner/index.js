@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SliderContent from './SliderContent'
 import SliderInfo from '../common/SliderInfo'
 import styled from 'styled-components'
@@ -8,6 +8,14 @@ const len = SliderInfo.length - 2
 const Banner = () => {
   const [activeIndex, setActiveIndex] = useState(-1)
   const [transitionIndex, setTransitionIndex] = useState(0.5)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex(activeIndex === -len ? -1 : activeIndex - 1)
+      setTransitionIndex(activeIndex === -len ? 0 : 0.5)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [activeIndex])
 
   const prevSlide = () => {
     activeIndex === -1

@@ -47,7 +47,7 @@ const ImgSlider = styled.section`
     display: flex;
     flex-direction: column;
     filter: brightness(50%);
-    transition: 0.5s all ease-in-out;
+
     &.active {
       filter: brightness(100%);
     }
